@@ -1,9 +1,21 @@
-import React from 'react'
+import React from "react";
+import { MenuLinks } from "../components";
 
 const Home = () => {
   return (
-    <div>Home</div>
-  )
-}
+    <section className="home-container container">
+      <div className="home-content">
+        <h1 className="home-title">
+          <span>Welcome to the</span>
+          <span>Frontend Quiz!</span>
+        </h1>
+        <p>Pick a subject to get started.</p>
+      </div>
+      <div className="home-list">
+        <MenuLinks/>
+      </div>
+    </section>
+  );
+};
 
-export default Home
+export default Home;

@@ -1,11 +1,13 @@
 // imports react
 import { useEffect, useState } from "react";
+import { Link, useParams } from "react-router-dom";
 
 const toggleMode = () => {
   return localStorage.getItem("darkMode") || "light";
 };
 
 const Navbar = () => {
+  const { title } = useParams();
   const [theme, setTheme] = useState(toggleMode());
 
   // toggle dark mode
@@ -23,14 +25,19 @@ const Navbar = () => {
   return (
     <header className="header">
       <div className="header-container container">
-        <div></div>
+        <div>
+          {title && (
+            <Link to={"/"} className=" header-logo">
+              <figure>
+                <img src={`../assets/icon-${title.toLowerCase()}.svg`} alt={theme} />
+              </figure>
+              <span>{title}</span>
+            </Link>
+          )}
+        </div>
         <div>
           <div className="dark-btn" onClick={toggleTheme}>
-            <input
-              type="checkbox"
-              checked={theme === "dark-mode"}
-              onChange={toggleTheme} // Add onChange handler
-            />
+            <input type="checkbox" checked={theme === "dark-mode"} readOnly />
             <span>
               <span></span>
               <span></span>

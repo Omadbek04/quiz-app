@@ -13,7 +13,7 @@ function Result({ title, color, icon, correctAnswerCount, questionsLength }) {
         <div className="test-completed-body">
           <div className="menu-item header-logo">
             <figure style={{ backgroundColor: color }}>
-              <img src={`${icon}`} alt="" />
+              <img src={`.${icon}`} alt="" />
             </figure>
             <span>{title}</span>
           </div>
